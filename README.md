@@ -43,17 +43,15 @@ The FastAPI server provides the following functionalities:
     * **Request Body (JSON):** `{"query": "Your question here"}`
     * **Response:** `{"response": "LLM generated answer..."}` or an error message (503, 500).
 
-
-    ## Setup Instructions
+## Setup Instructions
 
 Follow these steps to set up the project locally:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone <YOUR_GITHUB_REPOSITORY_LINK_HERE>
-    cd <YOUR_PROJECT_DIRECTORY_NAME>
+    git clone [https://github.com/shahtalib002/dna-analysis-api.git](https://github.com/shahtalib002/dna-analysis-api.git)
+    cd dna-analysis-api
     ```
-    *(Replace `<YOUR_GITHUB_REPOSITORY_LINK_HERE>` with the actual link once you upload it to GitHub, and `<YOUR_PROJECT_DIRECTORY_NAME>` with the folder name, e.g., `dna_api_project`)*
 
 2.  **Create and Activate Virtual Environment:**
     It's highly recommended to use a virtual environment to manage dependencies.
@@ -85,12 +83,12 @@ Follow these steps to set up the project locally:
         ```
     * **Note:** Ensure the `.env` file is included in your `.gitignore` file and is not committed to version control.
 
-    ## Running the Server
+## Running the Server
 
 Once the setup is complete, you can run the FastAPI server using Uvicorn:
 
 1.  Ensure your virtual environment is activated.
-2.  Make sure you are in the project's root directory.
+2.  Make sure you are in the project's root directory (`dna-analysis-api`).
 3.  Run the following command:
     ```bash
     uvicorn main:app --reload
@@ -113,9 +111,9 @@ You can interact with the API in two main ways:
 
 1.  **Upload CSV File:**
     ```bash
+    # Make sure 'dirty_sample_data.csv' is in your current directory or provide the correct path
     curl -X POST -F "file=@./dirty_sample_data.csv" [http://127.0.0.1:8000/upload-csv/](http://127.0.0.1:8000/upload-csv/)
     ```
-    *(Replace `./dirty_sample_data.csv` with the correct path to your CSV data file)*
 
 2.  **Generate Sequence:**
     ```bash
@@ -136,7 +134,7 @@ You can interact with the API in two main ways:
     [http://127.0.0.1:8000/ask-me-anything/](http://127.0.0.1:8000/ask-me-anything/)
     ```
 
-    ## Explanation of Logic
+## Explanation of Logic
 
 ### DNA Sequence Generation (`sequence_utils.generate_dna_sequence`)
 
